@@ -13,6 +13,7 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigCanvas, NavigationToolbar2WxAgg as NavigationToolbar
 import numpy as np
 import pylab
+from pubsub import PubSub
 
 TIMER_ID1 = 2000
 
