@@ -108,6 +108,7 @@ class GraphFrame(wx.Frame):
     The main frame of the application
     """
     title ='Telecon Module'
+    SIGNAL = 'my-first-signal'
 
     def __init__(self):
         wx.Frame.__init__(self, None, -1, self.title, size=(600,500))      
@@ -317,9 +318,17 @@ class GraphFrame(wx.Frame):
         self.redraw_timer.Start(1000)
         self.axes.set_ylabel(ylabel)
         self.axes.set_xlabel("Time")
+    
+    def handle_event(self, data):
+        """Simple event handler"""
+        print(data)
+
 
 
 if __name__ == '__main__':
+    # ps = PubSub(SIGNAL)
+    # ps.subscribe(handle_event)
+    # ps.publish()
     app = wx.App()
     app.frame = GraphFrame()
     app.frame.add_plots("blue", name="Force")

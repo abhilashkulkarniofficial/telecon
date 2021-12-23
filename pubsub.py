@@ -40,17 +40,14 @@ class PubSub(object):
             sleep(1)
 
     def subscribe(self, handler):
-        handler("second")
         dispatcher.connect(handler, signal=self.SIGNAL, sender=dispatcher.Any)
 
+# def handle_event(data):
+#     """Simple event handler"""
+#     print(data)
 
-def handle_event(sender):
-    """Simple event handler"""
-    print('Signal was sent by', sender)
-
-if __name__ == '__main__':
-# def main():
-    ps = PubSub(SIGNAL)
-    handle_event("first")
-    ps.subscribe(handle_event)
-    ps.publish()
+# if __name__ == '__main__':
+# # def main():
+#     ps = PubSub(SIGNAL)
+#     ps.subscribe(handle_event)
+#     ps.publish()
