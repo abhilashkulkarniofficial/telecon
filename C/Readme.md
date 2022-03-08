@@ -1,6 +1,6 @@
 # C Telecon
 
-Telecon library for C.
+Telecon library in C
 
 ## Installation
 
